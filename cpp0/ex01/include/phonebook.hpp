@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@42student.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 17:06:36 by pboucher          #+#    #+#             */
-/*   Updated: 2025/03/20 17:28:57 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/03/26 17:54:53 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,30 @@
 
 #include <iostream>
 
-# define RESET   "\1\033[0m\2"
-# define RED     "\1\033[31m\2"
-# define GREEN   "\1\033[32m\2"
-# define YELLOW  "\1\033[33m\2"
-# define BLUE    "\1\033[34m\2"
-# define MAGENTA "\1\033[35m\2"
-# define CYAN    "\1\033[36m\2"
-# define WHITE   "\1\033[37m\2"
-
 class Phonebook
 {
 	public:
-		std::string first_name;
-		std::string last_name;
-		std::string nickname;
-		std::string phone_number;
-		std::string darkest_secret;
+		int getID() const;
+		std::string getFN() const;
+		std::string getLN() const;
+		std::string getNN() const;
+		std::string getDA() const;
+		std::string getPN() const;
+		Phonebook &setID(int id);
+		Phonebook &setFN(std::string fn);
+		Phonebook &setLN(std::string ln);
+		Phonebook &setNN(std::string nn);
+		Phonebook &setDA(std::string da);
+		Phonebook &setPN(std::string pn);
 	private:
-		int id;
+		std::string _firstname;
+		std::string _lastname;
+		std::string _nickname;
+		std::string _darkest;
+		std::string _phonenum;
+		int _id;
 };
+
+void	add_phonebook(Phonebook *phonebook);
 
 #endif
