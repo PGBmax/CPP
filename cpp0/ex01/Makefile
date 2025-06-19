@@ -1,15 +1,16 @@
 NAME = phonebook
 
-CPP_FLAGS = -Wall -Werror -Wextra -g
+INCLUDES = include/
+
+CPP_FLAGS = -I$(INCLUDES) -Wall -Werror -Wextra -g
 CC = c++
 
 SRC_DIR = srcs/
-SRC_NAME =	main.cpp \
-			phonebook.cpp \
-			class.cpp
+SRC_NAME =	main.cpp Contact.cpp PhoneBook.cpp
 
 OBJ_DIR = obj/
 OBJ_NAME = $(SRC_NAME:.cpp=.o)
+DEP_NAME = $(SRC_NAME:.cpp=.d)
 OBJ = $(patsubst %, $(OBJ_DIR)%, $(OBJ_NAME))
 $(OBJ_DIR)%.o:$(SRC_DIR)%.cpp
 	@mkdir -p $(dir $@)
@@ -35,3 +36,5 @@ fclean: clean
 all: $(NAME)
 
 re: fclean all
+
+-include $(DEP_NAME)

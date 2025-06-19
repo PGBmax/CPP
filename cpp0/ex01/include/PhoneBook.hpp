@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.hpp                                          :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/19 01:10:16 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/19 01:19:39 by pboucher         ###   ########.fr       */
+/*   Created: 2025/06/19 01:20:47 by pboucher          #+#    #+#             */
+/*   Updated: 2025/06/19 02:41:58 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_HPP
-# define UTILS_HPP
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
 #include <iostream>
+#include "Contact.hpp"
 
-#define RST "\e[0m"
-#define RED "\e[1;31m"
-#define GRN "\e[1;32m"
-#define YEL "\e[1;33m"
-#define BLU "\e[1;34m"
-#define MAG "\e[1;35m"
-#define CYN "\e[1;36m"
-#define WHT "\e[1;37m"
+class PhoneBook
+{
+	public:
+		void	add(void);
+		void	search(void);
+
+	private:
+		Contact _class[8];
+		int		_index;
+		void	_show(void);
+		void	_contact_info(int index);
+};
 
 #endif
