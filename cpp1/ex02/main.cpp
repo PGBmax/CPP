@@ -5,30 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/19 01:06:32 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/19 16:12:10 by pboucher         ###   ########.fr       */
+/*   Created: 2025/06/20 16:00:13 by pboucher          #+#    #+#             */
+/*   Updated: 2025/06/20 16:20:23 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.hpp"
-#include "PhoneBook.hpp"
+#include <iostream>
 
 int main()
 {
-	PhoneBook PhoneBook;
-	std::string	input;
+	std::string	var = "HI THIS IS BRAIN";
+	std::string	*ptr = &var;
+	std::string	&ref = var;
 
-	PhoneBook.show_prompt();
-	while (!std::cin.eof() && input != "EXIT")
-	{
-		std::cout << BLU << "[PhoneBook] » " << RST;
-		std::getline(std::cin, input);
-		if (input == "ADD")
-			PhoneBook.add();
-		else if (input == "SEARCH")
-			PhoneBook.search();
-	}
-	if (std::cin.eof())
-		std::cout << "" << std::endl;
-	std::cout << MAG << "😔 Goodbye friend. 😔" << RST << std::endl;
+	std::cout	<< &var	<< std::endl
+				<< ptr	<< std::endl
+				<< &ref	<< std::endl
+				<< std::endl << std::endl;
+	
+	std::cout	<< var	<< std::endl
+				<< *ptr	<< std::endl
+				<< ref	<< std::endl
+				<< std::endl << std::endl;
+	
+	var = "HI THIS IS BRAINROT";
+
+	std::cout	<< &var	<< std::endl
+				<< ptr	<< std::endl
+				<< &ref	<< std::endl
+				<< std::endl << std::endl;
+	
+	std::cout	<< var	<< std::endl
+				<< *ptr	<< std::endl
+				<< ref	<< std::endl;
 }

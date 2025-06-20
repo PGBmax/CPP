@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.hpp                                          :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/19 01:10:16 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/19 16:33:28 by pboucher         ###   ########.fr       */
+/*   Created: 2025/06/20 16:50:04 by pboucher          #+#    #+#             */
+/*   Updated: 2025/06/20 18:32:13 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_HPP
-# define UTILS_HPP
+#ifndef	HUMANB_HPP
+# define HUMANB_HPP
 
-#include <iostream>
-#include <iomanip>
-#include <cctype>
+#include "Weapon.hpp"
 
-#define RST "\e[0m"
-#define RED "\e[1;31m"
-#define GRN "\e[1;32m"
-#define YEL "\e[1;33m"
-#define BLU "\e[1;34m"
-#define MAG "\e[1;35m"
-#define CYN "\e[1;36m"
-#define WHT "\e[1;37m"
+class HumanB
+{
+	public:
+		HumanB(std::string name);
+		~HumanB();
+
+		void	attack();
+		void	setWeapon(Weapon weapon);
+	private:
+		Weapon		_weapon;
+		std::string	_name;
+};
 
 #endif

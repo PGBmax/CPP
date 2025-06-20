@@ -1,12 +1,10 @@
-NAME = phonebook
+NAME = Account
 
-INCLUDES = include/
-
-CPP_FLAGS = -I$(INCLUDES) -Wall -Werror -Wextra -g -std=c++98
+CPP_FLAGS = -Wall -Werror -Wextra -g -std=c++98
 CC = c++
 
-SRC_DIR = srcs/
-SRC_NAME =	main.cpp Contact.cpp PhoneBook.cpp
+SRC_DIR = ./
+SRC_NAME =	tests.cpp Account.cpp
 
 OBJ_DIR = obj/
 OBJ_NAME = $(SRC_NAME:.cpp=.o)

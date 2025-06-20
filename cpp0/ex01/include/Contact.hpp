@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 01:21:33 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/19 02:30:50 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/19 10:55:53 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,17 @@
 class Contact
 {
 	public:
-		Contact();
+		std::string	const& get_first_name() const;
+		std::string	const& get_last_name() const;
+		std::string	const& get_nick_name() const;
+		std::string	const& get_phone_number() const;
+		std::string	const& get_darkest_secret() const;
 
-		std::string	get_first_name();
-		std::string	get_last_name();
-		std::string	get_nick_name();
-		std::string	get_phone_number();
-		std::string get_darkest_secret();
-
-		Contact	&set_first_name(std::string first_name);
-		Contact	&set_last_name(std::string last_name);
-		Contact	&set_nick_name(std::string nick_name);
-		Contact	&set_phone_number(std::string phone_number);
-		Contact	&set_darkest_secret(std::string darkest_secret);
+		Contact	&set_first_name(std::string const& first_name);
+		Contact	&set_last_name(std::string const& last_name);
+		Contact	&set_nick_name(std::string const& nick_name);
+		Contact	&set_phone_number(std::string const& phone_number);
+		Contact	&set_darkest_secret(std::string const& darkest_secret);
 	private:
 		std::string	_first_name;
 		std::string	_last_name;
