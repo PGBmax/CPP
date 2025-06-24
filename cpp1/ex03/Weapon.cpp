@@ -6,15 +6,15 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 16:34:53 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/20 17:36:58 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/20 23:32:52 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-Weapon::Weapon(std::string name)
+Weapon::Weapon(const std::string &name)
 {
-	this->_type = name;
+	this->setType(name);
 	std::cout << "Weapon constructor called" << std::endl;
 }
 
@@ -23,12 +23,15 @@ Weapon::~Weapon()
 	std::cout << "Weapon destructor called" << std::endl;
 }
 
-std::string	&Weapon::getType()
+const std::string &Weapon::getType() const
 {
 	return (this->_type);
 }
 
-void	Weapon::setType( std::string name )
+void	Weapon::setType(const std::string &name )
 {
-	this->_type = name;
+	if (name.empty())
+		this->_type = "nothing";
+	else
+		this->_type = name;
 }

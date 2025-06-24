@@ -6,31 +6,36 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 16:48:59 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/20 17:32:07 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/20 23:41:20 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
 #include "HumanB.hpp"
 
 
-HumanB::HumanB(std::string name)
+HumanB::HumanB(std::string name) : _weapon(NULL)
 {
-	this->_name = name;
-	std::cout << this->_name << "joined the chat." << std::endl;
+	if (name.empty())
+		this->_name = "Blud";
+	else
+		this->_name = name;
+	std::cout << this->_name << " has joined the chat." << std::endl;
 }
 
 HumanB::~HumanB()
 {
-	std::cout << this->_name << "left the chat." << std::endl;
+	std::cout << this->_name << " has left the chat." << std::endl;
 }
 
 void	HumanB::attack()
 {
-	std::cout << this->_name << "attacks with their " << this->_weapon.getType() << std::endl;
+	if (!this->_weapon)
+		std::cout << this->_name << " just go look the sky because i cant fight :(" << std::endl;
+	else
+		std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
 }
 
-void	HumanB::setWeapon(Weapon weapon)
+void	HumanB::setWeapon(Weapon &weapon)
 {
-	this->_weapon = weapon;
+	this->_weapon = &weapon;
 }

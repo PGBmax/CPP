@@ -6,9 +6,12 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 01:21:33 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/19 10:55:53 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/20 23:12:59 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
 #include <iostream>
 
@@ -33,3 +36,5 @@ class Contact
 		std::string _phone_number;
 		std::string _darkest_secret;
 };
+
+#endif
