@@ -6,26 +6,28 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 23:49:56 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/24 02:49:33 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/24 18:20:35 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sed.hpp"
+#include <stdexcept>
 
 Sed::Sed(const std::string &filename, const std::string &s1, const std::string &s2)
 {
 	if (filename.empty())
-		throw (std::string("There is nothing in the filename :rio_de_janeiro:"));
+		throw std::logic_error("bro plz use your brain");
+		// throw (std::string("There is nothing in the filename 🐵"));
 	if (s1.empty())
-		throw (std::string("Nah bro the string to search is empty :pensive:"));
+		throw (std::string("Nah bro the string to search is empty 😔"));
 	if (s2.empty())
-		throw (std::string("Blud hasn't even try to write something to replace :skull:"));
+		throw (std::string("Blud hasn't even try to write something to replace 💀"));
 	std::string	filename_replace = filename;
 	this->_file.open(filename.c_str(), std::ifstream::in);
 	if (!this->_file.fail())
 		this->_new_file.open(filename_replace.append(".replace").c_str(), std::ofstream::out | std::ofstream::trunc);
 	if (this->_file.fail() || this->_new_file.fail())
-		throw (std::string("PC just rotting himself :wtf:"));
+		throw (std::string("PC just rotting himself 🤯"));
 	this->_s1 = s1;
 	this->_s2 = s2;
 }

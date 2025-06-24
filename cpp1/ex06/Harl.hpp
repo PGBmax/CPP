@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 02:55:29 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/24 03:22:15 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/24 18:10:02 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,4 @@ class Harl
 		void	error();
 
 		std::string _level[4];
-		void	(Harl::*_msg[4])();
 };

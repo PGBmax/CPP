@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 16:39:27 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/20 23:41:15 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/24 11:14:00 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 HumanA::HumanA(const std::string &name, Weapon &weapon) : _weapon(weapon)
 {
 	if (name.empty())
-		this->_name = "Nobody";
+		this->_name = "Goofy aaaah Human";
 	else
 		this->_name = name;
 	std::cout << this->_name << " has joined the chat." << std::endl;

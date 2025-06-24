@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 03:02:15 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/24 03:31:52 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/24 18:14:54 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 
 Harl::Harl()
 {
-	this->_msg[0] = &Harl::debug;
-	this->_msg[1] = &Harl::info;
-	this->_msg[2] = &Harl::warning;
-	this->_msg[3] = &Harl::error;
 	this->_level[0] = "DEBUG";
 	this->_level[1] = "INFO";
 	this->_level[2] = "WARNING";
@@ -30,34 +26,45 @@ Harl::~Harl()
 
 void	Harl::complain( std::string level )
 {
-	for (int i = 0; i < 4; i++)
+	int i = 0;
+	for (; this->_level[i] != level && i < 4; i++)
+		;
+	switch (i)
 	{
-		if (this->_level[i] == level)
-		{
-			std::cout << "[ " << level << " ]" << std::endl;
-			(this->*_msg[i])();
-			return ;
-		}
+		case 0:
+			this->debug();
+		case 1:
+			this->info();
+		case 2:
+			this->warning();
+		case 3:
+			this->error();
+			break;
+		default:
+			std::cout << "[ Nah bro you chillin ]" << std::endl;
 	}
-	std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 }
 
 void	Harl::debug()
 {
-	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl;
+	std::cout << "[ DEBUG ]" << std::endl;
+	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl << std::endl;
 }
 
 void	Harl::info()
 {
-	std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
+	std::cout << "[ INFO ]" << std::endl;
+	std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl << std::endl;
 }
 
 void	Harl::warning()
 {
-	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for years, whereas you started working here just last month." << std::endl;
+	std::cout << "[ WARNING ]" << std::endl;
+	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for years, whereas you started working here just last month." << std::endl << std::endl;
 }
 
 void	Harl::error()
 {
+	std::cout << "[ ERROR ]" << std::endl;
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }

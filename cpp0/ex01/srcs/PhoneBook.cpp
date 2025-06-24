@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 01:45:19 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/20 14:25:30 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/24 11:38:39 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ PhoneBook::~PhoneBook()
 {
 }
 
-std::string	PhoneBook::_get_input(std::string input)
+std::string	PhoneBook::_getInput(std::string input)
 {
 	std::string info;
 
@@ -39,26 +39,26 @@ std::string	PhoneBook::_get_input(std::string input)
 
 void	PhoneBook::add()
 {
-	std::string first_name = _get_input("First Name : ");
-	if (first_name.empty())
+	std::string firstName = _getInput("First Name : ");
+	if (firstName.empty())
 		return ;
-	std::string last_name = _get_input("Last Name : ");
-	if (last_name.empty())
+	std::string lastName = _getInput("Last Name : ");
+	if (lastName.empty())
 		return ;
-	std::string nick_name = _get_input("Nickname : ");
-	if (nick_name.empty())
+	std::string nickname = _getInput("Nickname : ");
+	if (nickname.empty())
 		return ;
-	std::string phone_number = _get_input("Phone number : ");
-	if (phone_number.empty())
+	std::string phoneNumber = _getInput("Phone number : ");
+	if (phoneNumber.empty())
 		return ;
-	std::string darkest_secret = _get_input("Darkest secret : ");
-	if (darkest_secret.empty())
+	std::string darkestSecret = _getInput("Darkest secret : ");
+	if (darkestSecret.empty())
 		return ;
-	this->_class[_index]	.set_first_name(first_name)
-					.set_last_name(last_name)
-					.set_nick_name(nick_name)
-					.set_phone_number(phone_number)
-					.set_darkest_secret(darkest_secret);
+	this->_class[_index]	.setFirstName(firstName)
+					.setLastName(lastName)
+					.setNickname(nickname)
+					.setPhoneNumber(phoneNumber)
+					.setDarkestSecret(darkestSecret);
 	this->_index++;
 	this->_index = _index % 8;
 }
@@ -85,10 +85,10 @@ void	PhoneBook::search()
 		if (input[0] && input[0] >= '0' && input[0] <= '7')
 			value = input[0] - 48;
 	}
-	_contact_info(value);
+	_contactInfo(value);
 }
 
-void	PhoneBook::show_prompt()
+void	PhoneBook::showPrompt()
 {
 	std::cout << MAG << "🥰 Welcome to the PhoneBook. 🥰" << RST << std::endl;
 	std::cout << MAG << "Here is a list of how to use it:" << RST << std::endl;
@@ -97,7 +97,7 @@ void	PhoneBook::show_prompt()
 	std::cout << MAG << "EXIT	: only if you want to sadly leave the program 😔" << RST << std::endl;
 }
 
-void	PhoneBook::_print_info(std::string info)
+void	PhoneBook::_printInfo(std::string info)
 {
 	if (info.size() > 10)
 		info = info.erase(9).append(".");
@@ -114,25 +114,25 @@ void	PhoneBook::_show()
 		std::cout << "┃";
 		std::string index;
 		index = i + 48;
-		_print_info(index);
+		_printInfo(index);
 		std::cout << "┃";
-		_print_info(this->_class[i].get_first_name());
+		_printInfo(this->_class[i].getFirstName());
 		std::cout << "┃";
-		_print_info(this->_class[i].get_last_name());
+		_printInfo(this->_class[i].getLastName());
 		std::cout << "┃";
-		_print_info(this->_class[i].get_nick_name());
+		_printInfo(this->_class[i].getNickname());
 		std::cout << "┃" << std::endl;
 	}
 	std::cout << "┗━━━━━━━━━━┻━━━━━━━━━━┻━━━━━━━━━━┻━━━━━━━━━━┛" << std::endl;
 }
 
-void	PhoneBook::_contact_info(int index)
+void	PhoneBook::_contactInfo(int index)
 {
 	std::cout << WHT << "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" << std::endl;
-	std::cout << "First Name	: " << this->_class[index].get_first_name() << std::endl;
-	std::cout << "Last Name	: " << this->_class[index].get_last_name() << std::endl;
-	std::cout << "Nickname	: " << this->_class[index].get_nick_name() << std::endl;
-	std::cout << "Phone Number	: " << this->_class[index].get_phone_number() << std::endl;
-	std::cout << "Darkest Secret	: " << this->_class[index].get_darkest_secret() << std::endl;
+	std::cout << "First Name	: " << this->_class[index].getFirstName() << std::endl;
+	std::cout << "Last Name	: " << this->_class[index].getLastName() << std::endl;
+	std::cout << "Nickname	: " << this->_class[index].getNickname() << std::endl;
+	std::cout << "Phone Number	: " << this->_class[index].getPhoneNumber() << std::endl;
+	std::cout << "Darkest Secret	: " << this->_class[index].getDarkestSecret() << std::endl;
 	std::cout << "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" << RST << std::endl;
 }

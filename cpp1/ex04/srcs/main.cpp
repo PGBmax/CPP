@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 23:43:29 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/24 02:41:40 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/24 18:21:40 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(int ac, char **av)
 {
 	if (ac != 4)
 	{
-		std::cerr << "Programs needs 3 argues:\n<filename> <string1> <string2>" << std::endl;
+		std::cerr << "Programs needs 3 arguments:\n<filename> <string1> <string2>" << std::endl;
 		return (1);
 	}
 	try
@@ -26,8 +26,9 @@ int main(int ac, char **av)
 		sed.replace();
 		std::cout << av[1] << " copy has been created !" << std::endl;
 	}
-	catch(std::string error)
+	catch(std::exception const& error)
 	{
-		std::cout << error << std::endl;
+		
+		std::cout << error.what() << std::endl;
 	}
 }

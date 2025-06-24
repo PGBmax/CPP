@@ -6,63 +6,63 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 01:28:58 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/19 10:51:41 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/24 11:38:39 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-const std::string	&Contact::get_first_name() const
+const std::string	&Contact::getFirstName() const
 {
-	return (this->_first_name);
+	return (this->_firstName);
 }
 
-const std::string	&Contact::get_last_name() const
+const std::string	&Contact::getLastName() const
 {
-	return (this->_last_name);
+	return (this->_lastName);
 }
 
-const std::string	&Contact::get_nick_name() const
+const std::string	&Contact::getNickname() const
 {
-	return (this->_nick_name);
+	return (this->_nickname);
 }
 
-const std::string	&Contact::get_phone_number() const
+const std::string	&Contact::getPhoneNumber() const
 {
-	return (this->_phone_number);
+	return (this->_phoneNumber);
 }
 
-const std::string	&Contact::get_darkest_secret() const
+const std::string	&Contact::getDarkestSecret() const
 {
-	return (this->_darkest_secret);
+	return (this->_darkestSecret);
 }
 
-Contact	&Contact::set_first_name(std::string const& first_name)
+Contact	&Contact::setFirstName(std::string const& firstName)
 {
-	_first_name = first_name;
+	_firstName = firstName;
 	return (*this);
 }
 
-Contact	&Contact::set_last_name(std::string const& last_name)
+Contact	&Contact::setLastName(std::string const& lastName)
 {
-	_last_name = last_name;
+	_lastName = lastName;
 	return (*this);
 }
 
-Contact	&Contact::set_nick_name(std::string const& nick_name)
+Contact	&Contact::setNickname(std::string const& nickname)
 {
-	_nick_name = nick_name;
+	_nickname = nickname;
 	return (*this);
 }
 
-Contact	&Contact::set_phone_number(std::string const& phone_number)
+Contact	&Contact::setPhoneNumber(std::string const& phoneNumber)
 {
-	_phone_number = phone_number;
+	_phoneNumber = phoneNumber;
 	return (*this);
 }
 
-Contact	&Contact::set_darkest_secret(std::string const& darkest_secret)
+Contact	&Contact::setDarkestSecret(std::string const& darkestSecret)
 {
-	_darkest_secret = darkest_secret;
+	_darkestSecret = darkestSecret;
 	return (*this);
 }

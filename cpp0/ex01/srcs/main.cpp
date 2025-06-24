@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 01:06:32 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/19 16:12:10 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/24 11:29:33 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main()
 	PhoneBook PhoneBook;
 	std::string	input;
 
-	PhoneBook.show_prompt();
+	PhoneBook.showPrompt();
 	while (!std::cin.eof() && input != "EXIT")
 	{
 		std::cout << BLU << "[PhoneBook] » " << RST;

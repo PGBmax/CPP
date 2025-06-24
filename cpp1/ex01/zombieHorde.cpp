@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 14:30:45 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/20 15:55:10 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/24 11:07:27 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Zombie *zombieHorde( int N, std::string name )
 {
 	if (N <= 0)
 	{
-		std::cout << "Nah bro use a uint instead" << std::endl;
+		std::cout << "Nah bro use a positive int instead" << std::endl;
 		return (NULL);
 	}
 	Zombie *new_zomb = new Zombie[N];

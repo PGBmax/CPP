@@ -6,13 +6,13 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 13:29:32 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/20 13:58:46 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/24 11:00:02 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie()
+Zombie::Zombie() : _name("goofy aah zombie")
 {
 	std::cout << "New Zombie created" << std::endl;
 }
@@ -20,8 +20,11 @@ Zombie::Zombie()
 Zombie::~Zombie()
 {
 	if (_name.empty())
-		std::cout << "Zombie just got deleted :sad:" << std::endl;
-	std::cout << "Zombie " << _name << " just got deleted :sad:" << std::endl;
+	{
+		std::cout << "Zombie just got deleted 😔" << std::endl;
+		return ;
+	}
+	std::cout << "Zombie " << _name << " just got deleted 😔" << std::endl;
 }
 
 void	Zombie::announce()
@@ -31,5 +34,6 @@ void	Zombie::announce()
 
 void	Zombie::set_name(std::string name)
 {
-	this->_name = name;
+	if (!name.empty())
+		this->_name = name;
 }

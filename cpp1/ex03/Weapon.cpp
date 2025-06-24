@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 16:34:53 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/20 23:32:52 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/24 11:12:46 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ const std::string &Weapon::getType() const
 void	Weapon::setType(const std::string &name )
 {
 	if (name.empty())
-		this->_type = "nothing";
+		this->_type = "hands";
 	else
 		this->_type = name;
 }
