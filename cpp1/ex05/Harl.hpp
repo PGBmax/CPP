@@ -6,9 +6,12 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 02:55:29 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/25 02:42:45 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/25 19:12:26 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef HARL_CPP
+# define HARL_CPP
 
 #include <iostream>
 
@@ -37,3 +40,5 @@ class Harl
 		std::string _level[4];
 		void	(Harl::*_msg[4])();
 };
+
+#endif

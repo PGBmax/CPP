@@ -1,9 +1,10 @@
 {
 	"files.associations": {
-		"string": "cpp",
-		"string_view": "cpp",
 		"compare": "cpp",
-		"memory_resource": "cpp",
-		"type_traits": "cpp"
+		"format": "cpp",
+		"limits": "cpp",
+		"optional": "cpp",
+		"type_traits": "cpp",
+		"variant": "cpp"
 	}
 }
