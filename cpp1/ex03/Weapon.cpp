@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 16:34:53 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/24 11:12:46 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/25 02:28:16 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 Weapon::Weapon(const std::string &name)
 {
 	this->setType(name);
-	std::cout << "Weapon constructor called" << std::endl;
+	std::cout << GRN << "Weapon constructor called" << RST << std::endl;
 }
 
 Weapon::~Weapon()
 {
-	std::cout << "Weapon destructor called" << std::endl;
+	std::cout << RED << "Weapon destructor called" << RST << std::endl;
 }
 
 const std::string &Weapon::getType() const

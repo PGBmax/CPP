@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 03:02:15 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/24 03:23:16 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/25 02:44:07 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Harl::Harl()
 {
-	std::cout << "Wassup guys, harl here." << std::endl;
+	std::cout << GRN << "Wassup guys, Harl here." << RST << std::endl;
 	this->_msg[0] = &Harl::debug;
 	this->_msg[1] = &Harl::info;
 	this->_msg[2] = &Harl::warning;
@@ -27,7 +27,7 @@ Harl::Harl()
 
 Harl::~Harl()
 {
-	std::cout << "Harl never dies." << std::endl;
+	std::cout << RED << "Harl never dies." << RST << std::endl;
 }
 
 void	Harl::complain( std::string level )
@@ -40,25 +40,25 @@ void	Harl::complain( std::string level )
 			return ;
 		}
 	}
-	std::cout << "Nah bro stop abuse of your power" << std::endl;
+	std::cout << RED << "Nah bro stop abuse of your power" << RST << std::endl;
 }
 
 void	Harl::debug()
 {
-	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl;
+	std::cout << YEL << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << RST << std::endl;
 }
 
 void	Harl::info()
 {
-	std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
+	std::cout << BLU << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << RST << std::endl;
 }
 
 void	Harl::warning()
 {
-	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for years, whereas you started working here just last month." << std::endl;
+	std::cout << MAG << "I think I deserve to have some extra bacon for free. I’ve been coming for years, whereas you started working here just last month." << RST << std::endl;
 }
 
 void	Harl::error()
 {
-	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
+	std::cout << CYN << "This is unacceptable! I want to speak to the manager now." << RST << std::endl;
 }

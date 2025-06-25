@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 13:29:32 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/24 11:00:02 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/25 02:26:08 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 Zombie::Zombie() : _name("goofy aah zombie")
 {
-	std::cout << "New Zombie created" << std::endl;
+	std::cout << GRN << "New Zombie created" << RST << std::endl;
 }
 
 Zombie::~Zombie()
 {
 	if (_name.empty())
 	{
-		std::cout << "Zombie just got deleted 😔" << std::endl;
+		std::cout << RED << "Zombie just got deleted 😔" << RST << std::endl;
 		return ;
 	}
-	std::cout << "Zombie " << _name << " just got deleted 😔" << std::endl;
+	std::cout << RED << "Zombie " << _name << " just got deleted 😔" << RST << std::endl;
 }
 
 void	Zombie::announce()
 {
-	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << BLU << _name << ": BraiiiiiiinnnzzzZ..." << RST << std::endl;
 }
 
 void	Zombie::set_name(std::string name)

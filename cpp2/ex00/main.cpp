@@ -5,31 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/20 23:43:29 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/25 02:36:27 by pboucher         ###   ########.fr       */
+/*   Created: 2025/06/25 03:00:33 by pboucher          #+#    #+#             */
+/*   Updated: 2025/06/25 03:01:21 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Sed.hpp"
+#include "Fixed.hpp"
 
-int main(int ac, char **av)
-{
-	if (ac != 4)
-	{
-		std::cerr	<< RED <<  "Programs needs 3 arguments:" 
-					<< std::endl << "<filename> <string1> <string2>" 
-					<< RST << std::endl;
-		return (1);
-	}
-	try
-	{
-		Sed sed(av[1], av[2], av[3]);
-		sed.replace();
-		std::cout << GRN << av[1] << " copy has been created !" << RST << std::endl;
-	}
-	catch(std::exception const& error)
-	{
-		std::cout << RED << error.what() << RST << std::endl;
-	}
+int main( void ) {
+
+	Fixed a;
+	Fixed b( a );
+	Fixed c;
+
+	c = b;
+
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+
+	return 0;
 }
