@@ -1,10 +1,10 @@
-NAME = my_first_class_in_orthodox_canonical_form
+NAME = bsp
 
 CPP_FLAGS =  -Wall -Werror -Wextra -g -std=c++98
 CC = c++
 
 SRC_DIR = ./
-SRC_NAME =	main.cpp Fixed.cpp
+SRC_NAME =	main.cpp Fixed.cpp Point.cpp
 
 OBJ_DIR = obj/
 OBJ_NAME = $(SRC_NAME:.cpp=.o)

@@ -1,4 +1,4 @@
-NAME = canon
+NAME = now_were_talking
 
 CPP_FLAGS =  -Wall -Werror -Wextra -g -std=c++98
 CC = c++

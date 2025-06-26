@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 03:08:52 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/26 13:54:11 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/26 13:41:00 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,20 +94,6 @@ Fixed	Fixed::operator++()
 	return (*this);
 }
 
-Fixed	Fixed::operator--(int)
-{
-	Fixed	it;
-	it._num = this->_num;
-	this->_num -= 1;
-	return (it);
-}
-
-Fixed	Fixed::operator--()
-{
-	this->_num -= 1;
-	return (*this);
-}
-
 bool	Fixed::operator==(const Fixed &op) const
 {
 	if (this == &op)
@@ -124,28 +110,28 @@ bool	Fixed::operator!=(const Fixed &op) const
 
 bool	Fixed::operator<(const Fixed &op) const
 {
-	if (this->toFloat() < op.toFloat())
+	if (this < &op)
 		return (true);
 	return (false);
 }
 
 bool	Fixed::operator>(const Fixed &op) const	
 {
-	if (this->toFloat() > op.toFloat())
+	if (this > &op)
 		return (true);
 	return (false);
 }
 
 bool	Fixed::operator<=(const Fixed &op) const
 {
-	if (this->toFloat() <= op.toFloat())
+	if (this <= &op)
 		return (true);
 	return (false);
 }
 
 bool	Fixed::operator>=(const Fixed &op) const
 {
-	if (this->toFloat() >= op.toFloat())
+	if (this >= &op)
 		return (true);
 	return (false);
 }
@@ -178,28 +164,28 @@ int		Fixed::toInt( void ) const
 
 Fixed	&Fixed::min(Fixed &a, Fixed &b)
 {
-	if (a.operator<=(b))
+	if (a.operator>=(b))
 		return (a);
 	return (b);
 }
 
 const Fixed	&Fixed::min(const Fixed &a, const Fixed &b)
 {
-	if (a.operator<=(b))
+	if (a.operator>=(b))
 		return (a);
 	return (b);
 }
 
 Fixed	&Fixed::max(Fixed &a, Fixed &b)
 {
-	if (a.operator>=(b))
+	if (a.operator<=(b))
 		return (a);
 	return (b);		
 }
 
 const Fixed	&Fixed::max(const Fixed &a, const Fixed &b)
 {
-	if (a.operator>=(b))
+	if (a.operator<=(b))
 		return (a);
 	return (b);
 }
