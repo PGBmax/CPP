@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 03:01:08 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/26 13:39:55 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/27 11:46:01 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ class Fixed
 		static const Fixed	&min(const Fixed &a, const Fixed &b);
 		static Fixed	&max(Fixed &a, Fixed &b);
 		static const Fixed	&max(const Fixed &a, const Fixed &b);
+		void	Abs();
 
 	private:
 		int					_num;

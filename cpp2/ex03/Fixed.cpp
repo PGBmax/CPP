@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 03:08:52 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/26 13:41:00 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/27 11:46:34 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,6 +188,12 @@ const Fixed	&Fixed::max(const Fixed &a, const Fixed &b)
 	if (a.operator<=(b))
 		return (a);
 	return (b);
+}
+
+void	Fixed::Abs()
+{
+	if (this->_num < 0)
+		this->_num *= -1;
 }
 
 std::ostream &operator<<(std::ostream &os, const Fixed &ref )

@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 14:15:51 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/26 14:49:14 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/27 11:49:00 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ Point::~Point()
 {
 }
 
-Fixed Point::getX()
+const Fixed &Point::getX() const
 {
 	return (this->_x);
 }
 
-Fixed Point::getY()
+const Fixed &Point::getY() const
 {
 	return (this->_y);
 }

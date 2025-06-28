@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 13:54:25 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/26 14:41:16 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/27 11:44:15 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ class Point
 		Point	&operator=(const Point &op);
 		~Point();
 
-		Fixed getX();
-		Fixed getY();
+		const Fixed &getX() const;
+		const Fixed &getY() const;
 	private:
-		Fixed _x;
-		Fixed _y;
+		Fixed	_x;
+		Fixed	_y;
 };
 
 #endif
