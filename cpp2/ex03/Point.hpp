@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 13:54:25 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/27 11:44:15 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/28 10:08:51 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ class Point
 		Fixed	_x;
 		Fixed	_y;
 };
+bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif

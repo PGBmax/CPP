@@ -1,10 +1,10 @@
-NAME = bsp
+NAME = ClapTrap
 
 CPP_FLAGS =  -Wall -Werror -Wextra -g -std=c++98
 CC = c++
 
 SRC_DIR = ./
-SRC_NAME =	main.cpp Fixed.cpp Point.cpp bsp.cpp
+SRC_NAME =	main.cpp ClapTrap.cpp
 
 OBJ_DIR = obj/
 OBJ_NAME = $(SRC_NAME:.cpp=.o)

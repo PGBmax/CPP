@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 01:45:19 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/24 11:38:39 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/06/28 14:33:39 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,19 @@ std::string	PhoneBook::_getInput(std::string input)
 void	PhoneBook::add()
 {
 	std::string firstName = _getInput("First Name : ");
-	if (firstName.empty())
+	if (firstName.empty() || std::cin.eof())
 		return ;
 	std::string lastName = _getInput("Last Name : ");
-	if (lastName.empty())
+	if (lastName.empty() || std::cin.eof())
 		return ;
 	std::string nickname = _getInput("Nickname : ");
-	if (nickname.empty())
+	if (nickname.empty() || std::cin.eof())
 		return ;
 	std::string phoneNumber = _getInput("Phone number : ");
-	if (phoneNumber.empty())
+	if (phoneNumber.empty() || std::cin.eof())
 		return ;
 	std::string darkestSecret = _getInput("Darkest secret : ");
-	if (darkestSecret.empty())
+	if (darkestSecret.empty() || std::cin.eof())
 		return ;
 	this->_class[_index]	.setFirstName(firstName)
 					.setLastName(lastName)
@@ -85,6 +85,8 @@ void	PhoneBook::search()
 		if (input[0] && input[0] >= '0' && input[0] <= '7')
 			value = input[0] - 48;
 	}
+	if (std::cin.eof())
+		return ;
 	_contactInfo(value);
 }
 

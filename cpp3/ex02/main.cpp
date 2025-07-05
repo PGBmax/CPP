@@ -6,23 +6,27 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 03:00:33 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/28 10:08:55 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/04 17:17:40 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-int main( void ) {
+int	main()
+{
+	ScavTrap	Gurt("Gurt");
+	FragTrap	Yo("Yo");
 
-	Point	a(0, 0);
-	Point	b(2, 7);
-	Point	c(4, 1);
-	Point	point(3, 2);
+	Gurt.showStats();
+	Yo.showStats();
 
-	if (bsp(a, b, c, point))
-		std::cout << "The Point 'point' is inside the abc triangle" << std::endl;
-	else
-		std::cout << "The Point 'point' isn't inside the abc triangle" << std::endl;
+	Gurt.guardGate();
+	Yo.highFivesGuys();
 
-	return 0;
+	Gurt.attack("");
+	Yo.attack("");
+
+	Gurt.showStats();
+	Yo.showStats();
 }

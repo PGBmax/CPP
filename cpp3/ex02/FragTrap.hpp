@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 03:00:33 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/28 10:08:55 by pboucher         ###   ########.fr       */
+/*   Created: 2025/07/04 17:03:16 by pboucher          #+#    #+#             */
+/*   Updated: 2025/07/04 17:11:01 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int main( void ) {
+#include "ClapTrap.hpp"
 
-	Point	a(0, 0);
-	Point	b(2, 7);
-	Point	c(4, 1);
-	Point	point(3, 2);
+class	FragTrap: virtual public ClapTrap
+{
+	public:
+		FragTrap( const std::string &name );
+		FragTrap( const FragTrap &copy );
+		FragTrap &operator=( const FragTrap &op );
+		~FragTrap();
 
-	if (bsp(a, b, c, point))
-		std::cout << "The Point 'point' is inside the abc triangle" << std::endl;
-	else
-		std::cout << "The Point 'point' isn't inside the abc triangle" << std::endl;
+		void highFivesGuys(void);
+		void attack( const std::string &target );
+};
 
-	return 0;
-}
+#endif

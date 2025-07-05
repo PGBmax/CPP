@@ -6,23 +6,19 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 03:00:33 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/28 10:08:55 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/04 14:17:42 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#include "ScavTrap.hpp"
 
-int main( void ) {
+int	main()
+{
+	ScavTrap	player("");
 
-	Point	a(0, 0);
-	Point	b(2, 7);
-	Point	c(4, 1);
-	Point	point(3, 2);
-
-	if (bsp(a, b, c, point))
-		std::cout << "The Point 'point' is inside the abc triangle" << std::endl;
-	else
-		std::cout << "The Point 'point' isn't inside the abc triangle" << std::endl;
-
-	return 0;
+	player.attack("");
+	player.beRepaired(10);
+	player.takeDamage(20);
+	player.takeDamage(-20);
+	player.guardGate();
 }

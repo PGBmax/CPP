@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 03:00:33 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/28 10:08:55 by pboucher         ###   ########.fr       */
+/*   Created: 2025/07/05 15:57:26 by pboucher          #+#    #+#             */
+/*   Updated: 2025/07/05 16:00:32 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
-int main( void ) {
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-	Point	a(0, 0);
-	Point	b(2, 7);
-	Point	c(4, 1);
-	Point	point(3, 2);
+class DiamondTrap: virtual public FragTrap, virtual public ScavTrap
+{
+	public:
+		DiamondTrap( const std::string &name );
+		DiamondTrap( const DiamondTrap &copy );
+		DiamondTrap &operator=( const DiamondTrap &op );
+		~DiamondTrap();
+	private:
+		std::string _name;
+};
 
-	if (bsp(a, b, c, point))
-		std::cout << "The Point 'point' is inside the abc triangle" << std::endl;
-	else
-		std::cout << "The Point 'point' isn't inside the abc triangle" << std::endl;
-
-	return 0;
-}
+#endif

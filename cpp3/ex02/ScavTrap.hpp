@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 03:00:33 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/28 10:08:55 by pboucher         ###   ########.fr       */
+/*   Created: 2025/06/28 11:13:22 by pboucher          #+#    #+#             */
+/*   Updated: 2025/07/04 17:09:52 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#include "ClapTrap.hpp"
 
-int main( void ) {
+class	ScavTrap: virtual public ClapTrap
+{
+	public:
+		ScavTrap( const std::string &name );
+		ScavTrap( const ScavTrap &copy );
+		ScavTrap &operator=( const ScavTrap &op );
+		~ScavTrap();
 
-	Point	a(0, 0);
-	Point	b(2, 7);
-	Point	c(4, 1);
-	Point	point(3, 2);
-
-	if (bsp(a, b, c, point))
-		std::cout << "The Point 'point' is inside the abc triangle" << std::endl;
-	else
-		std::cout << "The Point 'point' isn't inside the abc triangle" << std::endl;
-
-	return 0;
-}
+		void guardGate();
+		void attack( const std::string &target );
+};
