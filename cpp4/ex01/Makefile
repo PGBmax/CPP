@@ -1,10 +1,12 @@
-NAME = DiamondTrap
+NAME = i_dont_want_to_set_the_world_on_fire
 
-CPP_FLAGS =  -Wall -Werror -Wextra -g -std=c++98
+INCLUDES = include/
+
+CPP_FLAGS = -I$(INCLUDES) -Wall -Werror -Wextra -g -std=c++98
 CC = c++
 
-SRC_DIR = ./
-SRC_NAME =	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
+SRC_DIR = srcs/
+SRC_NAME =	main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 
 OBJ_DIR = obj/
 OBJ_NAME = $(SRC_NAME:.cpp=.o)

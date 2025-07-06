@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 03:00:33 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/06 13:08:00 by pboucher         ###   ########.fr       */
+/*   Created: 2025/07/06 13:59:49 by pboucher          #+#    #+#             */
+/*   Updated: 2025/07/06 14:06:16 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#include "Animal.hpp"
 
-int	main()
+Dog::Dog()
 {
-	DiamondTrap		Yuna("Yuna");
+	std::cout << CYN << "Dog constructor called" << std::endl << RST;
+	setType( "Dog" );
+}
 
-	Yuna.showStats();
-	Yuna.attack("");
-	Yuna.whoAmI();
-	Yuna.guardGate();
-	Yuna.highFivesGuys();
-	
+Dog::Dog( const Dog &copy )
+{
+	*this = copy;
+	std::cout << CYN << "Dog constructor copy called" << std::endl << RST;	
+}
+
+Dog	&Dog::operator=( const Dog &op )
+{
+	this->type = op.type;
+	return (*this);
+}
+
+Dog::~Dog()
+{
+	std::cout << CYN << "Dog destructor called" << std::endl << RST;	
 }

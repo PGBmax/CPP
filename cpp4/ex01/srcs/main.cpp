@@ -5,21 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 03:00:33 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/06 13:08:00 by pboucher         ###   ########.fr       */
+/*   Created: 2025/06/19 01:06:32 by pboucher          #+#    #+#             */
+/*   Updated: 2025/07/06 15:33:49 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#include "Animal.hpp"
 
-int	main()
+int main()
 {
-	DiamondTrap		Yuna("Yuna");
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-	Yuna.showStats();
-	Yuna.attack("");
-	Yuna.whoAmI();
-	Yuna.guardGate();
-	Yuna.highFivesGuys();
-	
+	delete j;//should not create a leak
+	delete i;
+	return 0;
 }
