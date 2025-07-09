@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 13:28:03 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/25 02:26:16 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/08 16:16:02 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Zombie
 		~Zombie();
 		
 		void	announce();
-		void	set_name(std::string name);
+		void	setName(std::string name);
 	private:
 		std::string	_name;
 };
