@@ -24,7 +24,6 @@
 #define CYN "\e[1;36m"
 #define WHT "\e[1;37m"
 
-#define HARL_FALLTHROUGH __attribute__ ((fallthrough))
 class Harl
 {
 	public:

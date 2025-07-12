@@ -6,12 +6,11 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 16:48:59 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/25 02:29:01 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/12 01:18:05 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
-
 
 HumanB::HumanB(std::string name) : _weapon(NULL)
 {

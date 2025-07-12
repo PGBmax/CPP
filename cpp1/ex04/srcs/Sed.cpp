@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 23:49:56 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/25 02:38:56 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/12 01:26:47 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@ Sed::Sed(const std::string &filename, const std::string &s1, const std::string &
 		throw std::logic_error("Blud hasn't even try to write something to replace 💀");
 	std::string	filename_replace = filename;
 	this->_file.open(filename.c_str(), std::ifstream::in);
-	if (!this->_file.fail())
-		this->_new_file.open(filename_replace.append(".replace").c_str(), std::ofstream::out | std::ofstream::trunc);
-	if (this->_file.fail() || this->_new_file.fail())
+	if (this->_file.fail())
+		throw std::logic_error("PC just rotting himself 🤯");
+	this->_new_file.open(filename_replace.append(".replace").c_str(), std::ofstream::out | std::ofstream::trunc);
+	if (this->_new_file.fail())
 		throw std::logic_error("PC just rotting himself 🤯");
 	this->_s1 = s1;
 	this->_s2 = s2;

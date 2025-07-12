@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 03:08:52 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/25 15:17:18 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/12 15:07:49 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,14 @@ Fixed::Fixed( const float num )
 	this->_num = roundf(temp);
 }
 
-Fixed	&Fixed::operator = ( const Fixed &ref )
+Fixed	&Fixed::operator=( const Fixed &ref )
 {
 	std::cout << "Copy assignement operator called" << std::endl;
 	this->_num = ref.getRawBits();
 	return *this;
 }
 
-std::ostream &operator << (std::ostream &os, const Fixed &ref )
+std::ostream &operator<<(std::ostream &os, const Fixed &ref )
 {
 	os << ref.toFloat();
 	return os;

@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 14:06:42 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/09 12:00:50 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/12 11:42:38 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,13 @@
 
 void	randomChump( std::string name )
 {
-	try
+	Zombie	*new_zomb = new(std::nothrow) Zombie;
+	if (!new_zomb)
 	{
-		Zombie	*new_zomb = new Zombie;
-		new_zomb->setName(name);
-		new_zomb->announce();
-		delete new_zomb;
+		std::cerr << RED << "randomChump() : Allocation Error" << RST << std::endl;
+		return ;
 	}
-	catch (const std::bad_alloc&e)
-	{
-		std::cout	<< "Memory Allocation is failed:"
-					<< e.what() << std::endl;
-	}
+	new_zomb->setName(name);
+	new_zomb->announce();
+	delete new_zomb;
 }

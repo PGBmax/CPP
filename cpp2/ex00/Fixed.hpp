@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 03:01:08 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/25 14:10:13 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/12 15:57:46 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Fixed
 	public:
 		Fixed();
 		Fixed( const Fixed &copy );
-		~Fixed();
 		Fixed &operator=( const Fixed &ref );
+		~Fixed();
 
 		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );

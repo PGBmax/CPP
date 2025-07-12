@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 14:06:30 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/09 11:45:46 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/12 01:15:42 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,12 @@
 
 Zombie	*newZombie( std::string name )
 {
-	try
+	Zombie	*new_zomb = new(std::nothrow) Zombie;
+	if (!new_zomb)
 	{
-		Zombie	*new_zomb = new Zombie;
-		new_zomb->setName( name );
-		return (new_zomb);
+		std::cerr << RED << "newZombie() : Allocation Error" << RST << std::endl;
+		return (NULL);
 	}
-	catch (const std::bad_alloc&e)
-	{
-		std::cout	<< "Memory Allocation is failed:"
-					<< e.what() << std::endl;
-	}
-	return (NULL);
+	new_zomb->setName( name );
+	return (new_zomb);
 }

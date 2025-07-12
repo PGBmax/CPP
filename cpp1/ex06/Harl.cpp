@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 03:02:15 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/25 02:55:29 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/12 01:29:35 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,24 @@ Harl::~Harl()
 void	Harl::debug()
 {
 	std::cout	<< YEL << "[ DEBUG ]" << RST << std::endl;
-	std::cout	<< YEL << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!"
+	std::cout	<< YEL << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special ketchup burger."
+				<< std::endl << "I really do!"
 				<< RST << std::endl << std::endl;
 }
 
 void	Harl::info()
 {
 	std::cout	<< BLU << "[ INFO ]" << RST << std::endl;
-	std::cout	<< BLU << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!"
+	std::cout	<< BLU << "I cannot believe adding extra bacon costs more money."
+				<< std::endl << "You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!"
 				<< RST << std::endl << std::endl;
 }
 
 void	Harl::warning()
 {
 	std::cout	<< MAG << "[ WARNING ]" << RST << std::endl;
-	std::cout	<< MAG << "I think I deserve to have some extra bacon for free. I’ve been coming for years, whereas you started working here just last month."
+	std::cout	<< MAG << "I think I deserve to have some extra bacon for free."
+				<< std::endl << "I’ve been coming for years, whereas you started working here just last month."
 				<< RST << std::endl << std::endl;
 }
 
@@ -60,13 +63,10 @@ void	Harl::complain( std::string level )
 	{
 		case 0:
 			this->debug();
-			HARL_FALLTHROUGH;
 		case 1:
 			this->info();
-			HARL_FALLTHROUGH;
 		case 2:
 			this->warning();
-			HARL_FALLTHROUGH;
 		case 3:
 			this->error();
 			break;

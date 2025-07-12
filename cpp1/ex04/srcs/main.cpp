@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 23:43:29 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/25 02:36:27 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/12 01:25:18 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ int main(int ac, char **av)
 	}
 	catch(std::exception const& error)
 	{
-		std::cout << RED << error.what() << RST << std::endl;
+		std::cerr << RED << error.what() << RST << std::endl;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 13:29:32 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/08 16:17:03 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/12 01:10:37 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Zombie::Zombie() : _name("goofy aah zombie")
 
 Zombie::~Zombie()
 {
-	std::cout << RED << "Zombie " << _name << " just got deleted 😔" << RST << std::endl;
+	std::cout << RED << "Zombie " << _name << " just got deleted" << RST << std::endl;
 }
 
 void	Zombie::announce()

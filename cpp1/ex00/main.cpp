@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 13:26:11 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/09 12:01:05 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/12 11:43:48 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	main()
 {
-	Zombie *zomboss = newZombie( "Philippe" );
+	Zombie *zomboss = newZombie( "Mewen" );
 	if (!zomboss)
-		return (0);
+		return (1);
 	zomboss->announce();
-	randomChump( "" );
+	randomChump( "Manutea" );
 	delete zomboss;	
 }
