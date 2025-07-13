@@ -1,4 +1,4 @@
-NAME = towards_a_more_useful_fixed_point_number_class
+NAME = fixed
 
 CPP_FLAGS =  -Wall -Werror -Wextra -g -std=c++98
 CC = c++

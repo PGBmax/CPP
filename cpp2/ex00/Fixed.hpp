@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 03:01:08 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/12 15:57:46 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/13 00:26:02 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Fixed
 		void	setRawBits( int const raw );
 	private:
 		int					_num;
-		static const int	_stock;
+		static const int	_stock = 8;
 };
 
 #endif

@@ -6,21 +6,18 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 03:08:52 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/12 15:07:49 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/13 11:16:24 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int const Fixed::_stock = 8;
-
-Fixed::Fixed()
+Fixed::Fixed() : _num(0)
 {
 	std::cout << "Default constructor called" << std::endl;
-	this->setRawBits(0);
 }
 
-Fixed::Fixed( const Fixed &copy )
+Fixed::Fixed( const Fixed &copy ) : _num(0)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
@@ -29,24 +26,18 @@ Fixed::Fixed( const Fixed &copy )
 Fixed::Fixed( const int num )
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->_num = num;
-	for (int i = 0; i < _stock; i++)
-		this->_num *= 2;
+	this->_num = num << this->_stock;
 }
 
 Fixed::Fixed( const float num )
 {
-	float temp;
 	std::cout << "Float constructor called" << std::endl;
-	temp = num;
-	for (int i = 0; i < _stock; i++)
-		temp *= 2;
-	this->_num = roundf(temp);
+	this->_num = (int)roundf(num * (1 << this->_stock));
 }
 
 Fixed	&Fixed::operator=( const Fixed &ref )
 {
-	std::cout << "Copy assignement operator called" << std::endl;
+	std::cout << "Copy assignment operator called" << std::endl;
 	this->_num = ref.getRawBits();
 	return *this;
 }
@@ -74,16 +65,10 @@ void	Fixed::setRawBits( int const raw )
 
 float	Fixed::toFloat( void ) const
 {
-	float num = (float)this->_num;
-	for (int i = 0; i < _stock; i++)
-		num /= 2;
-	return (num);
+	return ((float)this->_num / (1 << this->_stock));
 }
 
 int		Fixed::toInt( void ) const
 {
-	float num = (float)this->_num;
-	for (int i = 0; i < _stock; i++)
-		num /= 2;
-	return (roundf(num));
+	return ((float)this->_num / (1 << this->_stock));
 }

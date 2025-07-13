@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 03:01:08 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/12 15:08:08 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/13 00:28:53 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class Fixed
 
 	private:
 		int					_num;
-		static const int	_stock;
+		static const int	_stock = 8;
 };
 
 std::ostream &operator<<(std::ostream &os, const Fixed &ref );
