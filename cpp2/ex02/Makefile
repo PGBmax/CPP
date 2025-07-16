@@ -1,4 +1,4 @@
-NAME = now_were_talking
+NAME = fixed
 
 CPP_FLAGS =  -Wall -Werror -Wextra -g -std=c++98
 CC = c++

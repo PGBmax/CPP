@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 15:57:26 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/06 13:23:05 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/16 14:56:20 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class DiamondTrap : public FragTrap, public ScavTrap
 		DiamondTrap &operator=( const DiamondTrap &op );
 		~DiamondTrap();
 
-		void	attack( const std::string &target );
+		virtual void	attack(const std::string &target);
 		void	whoAmI();
 	private:
 		std::string _name;

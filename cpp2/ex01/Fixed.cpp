@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 03:08:52 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/13 11:16:24 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/13 11:41:21 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,13 @@ Fixed::~Fixed()
 
 int		Fixed::getRawBits( void ) const
 {
+	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_num);
 }
 
 void	Fixed::setRawBits( int const raw )
 {
+	std::cout << "setRawBits member function called" << std::endl;
 	this->_num = raw;
 }
 

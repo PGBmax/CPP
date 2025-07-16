@@ -1,6 +1,6 @@
 NAME = DiamondTrap
 
-CPP_FLAGS =  -Wall -Werror -Wextra -g -std=c++98
+CPP_FLAGS =  -Wall -Werror -Wextra -g -std=c++98 -Wshadow
 CC = c++
 
 SRC_DIR = ./

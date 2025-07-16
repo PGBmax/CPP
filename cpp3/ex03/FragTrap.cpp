@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 17:07:14 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/04 17:16:09 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/16 14:44:18 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	FragTrap::attack( const std::string &target )
 	this->_energy -= 1;
 }
 
-void	FragTrap::highFivesGuys(void)
+void	FragTrap::highFivesGuys()
 {
 	if (this->_hit <= 0)
 	{

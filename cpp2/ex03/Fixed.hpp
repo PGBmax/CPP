@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 03:01:08 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/27 11:46:01 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/13 13:12:01 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ class Fixed
 		Fixed	operator-(const Fixed &op) const;
 		Fixed	operator++(int);
 		Fixed	operator++(	);
+		Fixed	operator--(int);
+		Fixed	operator--(	);
 
 		bool	operator==(const Fixed &op) const;
 		bool	operator!=(const Fixed &op) const;
@@ -44,16 +46,16 @@ class Fixed
 		void	setRawBits( int const raw );
 		float	toFloat( void ) const;	
 		int		toInt( void ) const;
+		void	Abs();
 
 		static Fixed	&min(Fixed &a, Fixed &b);
 		static const Fixed	&min(const Fixed &a, const Fixed &b);
 		static Fixed	&max(Fixed &a, Fixed &b);
 		static const Fixed	&max(const Fixed &a, const Fixed &b);
-		void	Abs();
 
 	private:
 		int					_num;
-		static const int	_stock;
+		static const int	_stock = 8;
 };
 std::ostream &operator<<(std::ostream &os, const Fixed &ref );
 

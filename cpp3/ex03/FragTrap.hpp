@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 17:03:16 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/04 17:11:01 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/16 14:53:55 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class	FragTrap: virtual public ClapTrap
 		FragTrap &operator=( const FragTrap &op );
 		~FragTrap();
 
-		void highFivesGuys(void);
+		void highFivesGuys();
 		void attack( const std::string &target );
 };
 

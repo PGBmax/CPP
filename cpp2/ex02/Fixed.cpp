@@ -6,13 +6,11 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 03:08:52 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/26 13:54:11 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/13 13:11:04 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
-int const Fixed::_stock = 8;
 
 Fixed::Fixed()
 {
@@ -26,20 +24,12 @@ Fixed::Fixed( const Fixed &copy )
 
 Fixed::Fixed( const int num )
 {
-	int temp;
-	temp = num;
-	for (int i = 0; i < _stock; i++)
-		temp *= 2;
-	this->_num = num;
+	this->_num = num << this->_stock;
 }
 
 Fixed::Fixed( const float num )
 {
-	float temp;
-	temp = num;
-	for (int i = 0; i < _stock; i++)
-		temp *= 2;
-	this->_num = roundf(temp);
+	this->_num = (int)roundf(num * (1 << this->_stock));
 }
 
 Fixed::~Fixed()
@@ -54,30 +44,22 @@ Fixed	&Fixed::operator=(const Fixed &op)
 
 Fixed	Fixed::operator*(const Fixed &op) const
 {
-	Fixed	num;
-	num._num = this->_num * op._num;
-	return (num); 
+	return (this->toFloat() * op.toFloat());
 }
 
 Fixed	Fixed::operator/(const Fixed &op) const
 {
-	Fixed	num;
-	num._num = this->_num / op._num;
-	return (num); 
+	return (this->toFloat() / op.toFloat());
 }
 
 Fixed	Fixed::operator+(const Fixed &op) const
 {
-	Fixed	num;
-	num._num = this->_num + op._num;
-	return (num); 
+	return (this->toFloat() + op.toFloat());
 }
 
 Fixed	Fixed::operator-(const Fixed &op) const
 {
-	Fixed	num;
-	num._num = this->_num - op._num;
-	return (num); 
+	return (this->toFloat() - op.toFloat());
 }
 
 Fixed	Fixed::operator++(int)
@@ -162,18 +144,12 @@ void	Fixed::setRawBits( int const raw )
 
 float	Fixed::toFloat( void ) const
 {
-	float num = (float)this->_num;
-	for (int i = 0; i < _stock; i++)
-		num /= 2;
-	return (num);
+	return ((float)this->_num / (1 << this->_stock));
 }
 
 int		Fixed::toInt( void ) const
 {
-	float num = (float)this->_num;
-	for (int i = 0; i < _stock; i++)
-		num /= 2;
-	return (roundf(num));
+	return ((float)this->_num / (1 << this->_stock));
 }
 
 Fixed	&Fixed::min(Fixed &a, Fixed &b)

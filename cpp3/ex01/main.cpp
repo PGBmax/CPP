@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 03:00:33 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/04 14:17:42 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/16 14:36:12 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,27 @@
 
 int	main()
 {
-	ScavTrap	player("");
+	ScavTrap num("");
 
-	player.attack("");
-	player.beRepaired(10);
-	player.takeDamage(20);
-	player.takeDamage(-20);
-	player.guardGate();
+	num.attack("");
+	num.attack("Stromae");
+	num.attack("Stromae");
+	num.attack("Stromae");
+	num.attack("Stromae");
+	num.attack("Stromae");
+	num.attack("Stromae");
+	num.attack("Stromae");
+	num.attack("Stromae");
+	num.beRepaired(10);
+	num.beRepaired(-10);
+	num.attack("");
+	num.takeDamage(10);
+	num.takeDamage(-10);
+	num.takeDamage(10);
+	num.takeDamage(-10);
+	num.attack("Stromae");
+	num.beRepaired(10);
+	num.beRepaired(-10);
+	num.takeDamage(10);
+	num.takeDamage(1 -10);
 }

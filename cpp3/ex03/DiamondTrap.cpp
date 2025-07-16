@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 16:00:46 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/06 13:23:17 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/16 15:00:59 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,5 @@ void	DiamondTrap::attack( const std::string &target )
 
 void	DiamondTrap::whoAmI()
 {
-	std::cout << YEL << this->_name << " : Yo." << std::endl << RST;
+	std::cout << YEL << "DiamondTrap "<< this->_name << " : Yo." << std::endl << RST;
 }

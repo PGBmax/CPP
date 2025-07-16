@@ -6,26 +6,18 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 14:15:51 by pboucher          #+#    #+#             */
-/*   Updated: 2025/06/27 11:49:00 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/13 13:45:14 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-Point::Point()
+Point::Point() : _x(Fixed(0)), _y(Fixed(0))
 {
-	Fixed temp1(0);
-	Fixed temp2(0);
-	_x = temp1;
-	_y = temp2;
 }
 
-Point::Point( const float x, const float y )
+Point::Point( const float x, const float y ) : _x(Fixed(x)), _y(Fixed(y))
 {
-	Fixed temp1(x);
-	Fixed temp2(y);
-	_x = temp1;
-	_y = temp2;
 }
 
 Point::Point(const Point &copy)
