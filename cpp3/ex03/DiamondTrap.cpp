@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 16:00:46 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/16 15:00:59 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/17 15:45:21 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ DiamondTrap::DiamondTrap( const std::string &name ) : ClapTrap(name), FragTrap(n
 
 DiamondTrap::DiamondTrap( const DiamondTrap &copy ) : ClapTrap(copy), FragTrap(copy), ScavTrap(copy)
 {
+	std::cout << CYN << "[Constructor Copy - DiamondTrap] " << this->_name << " has joined the chat." << std::endl << RST;
 	*this = copy;
 }
 
@@ -34,6 +35,7 @@ DiamondTrap	&DiamondTrap::operator=( const DiamondTrap &op )
 	this->_hit = op._hit;
 	this->_energy = op._energy;
 	this->_attack = op._attack;
+	std::cout << CYN << "[Constructor Copy Assignment - DiamondTrap] " << this->_name << " has joined the chat." << std::endl << RST;
 	return (*this);
 }
 

@@ -5,43 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/06 13:37:03 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/06 14:04:50 by pboucher         ###   ########.fr       */
+/*   Created: 2025/07/18 12:20:57 by pboucher          #+#    #+#             */
+/*   Updated: 2025/07/18 12:53:31 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
+
+#include <iostream>
 
 class Animal
 {
 	public:
 		Animal();
-		Animal( const Animal &copy );
-		Animal &operator=( const Animal &op );
-		~Animal();
+		Animal(const Animal &cpy );
+		Animal &operator=( const Animal &cpy );
+		virtual ~Animal();
 
-		void	makeSound() const;
-
-		std::string	getType() const;
-		void		setType( std::string name );
+		const std::string &getType() const;
+		virtual void makeSound() const;
 	protected:
-		std::string type;
+		std::string _type;
 };
 
-class	Dog : public Animal
-{
-	public:
-		Dog();
-		Dog( const Dog &copy );
-		Dog &operator=( const Dog &op );
-		~Dog();
-};
-
-class	Cat : public Animal
-{
-	public:
-		Cat();
-		Cat( const Cat &copy );
-		Cat &operator=( const Cat &op );
-		~Cat();
-};
+#endif

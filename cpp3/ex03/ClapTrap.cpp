@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 10:18:32 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/06 13:06:57 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/17 15:41:34 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ ClapTrap::ClapTrap( const std::string &name )
 ClapTrap::ClapTrap( const ClapTrap &copy )
 {
 	*this = copy;
+	std::cout << CYN << "[Constructor Copy - ClapTrap] " << this->_name << " has joined the chat." << std::endl << RST;
 }
 
 ClapTrap	&ClapTrap::operator=( const ClapTrap &op )
@@ -34,8 +35,10 @@ ClapTrap	&ClapTrap::operator=( const ClapTrap &op )
 	this->_hit = op._hit;
 	this->_energy = op._energy;
 	this->_attack = op._attack;
+	std::cout << CYN << "[Constructor Copy Assignment - ClapTrap] " << this->_name << " has joined the chat." << std::endl << RST;
 	return (*this);
 }
+
 
 ClapTrap::~ClapTrap()
 {

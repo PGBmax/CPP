@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 17:07:14 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/16 14:44:18 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/17 15:44:29 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ FragTrap::FragTrap( const std::string &name ) : ClapTrap(name)
 
 FragTrap::FragTrap( const FragTrap &copy ) : ClapTrap(copy)
 {
+	std::cout << CYN << "[Constructor Copy - FragTrap] " << this->_name << " has joined the chat." << std::endl << RST;
 	*this = copy;
 }
 
@@ -34,6 +35,7 @@ FragTrap	&FragTrap::operator=( const FragTrap &op )
 	this->_hit = op._hit;
 	this->_energy = op._energy;
 	this->_attack = op._attack;
+	std::cout << CYN << "[Constructor Copy Assignment - FragTrap] " << this->_name << " has joined the chat." << std::endl << RST;
 	return (*this);
 }
 

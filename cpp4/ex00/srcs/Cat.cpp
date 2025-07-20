@@ -5,32 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/06 13:59:49 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/06 14:06:11 by pboucher         ###   ########.fr       */
+/*   Created: 2025/07/18 12:30:16 by pboucher          #+#    #+#             */
+/*   Updated: 2025/07/18 12:53:23 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Cat.hpp"
 
 Cat::Cat()
 {
-	std::cout << CYN << "Cat constructor called" << std::endl << RST;
-	setType( "Cat" );
+	_type = "Cat";
+	std::cout << "[Cat] Constructor Called" << std::endl;
 }
 
 Cat::Cat( const Cat &copy )
 {
-	*this = copy;
-	std::cout << CYN << "Cat constructor copy called" << std::endl << RST;	
+	_type = copy._type;
+	std::cout << "[Cat] Constructor Copy Called" << std::endl;
 }
 
-Cat	&Cat::operator=( const Cat &op )
+Cat	&Cat::operator=( const Cat &copy )
 {
-	this->type = op.type;
+	_type = copy._type;
+	std::cout << "[Cat] Constructor Copy Assignment Called" << std::endl;
 	return (*this);
 }
 
 Cat::~Cat()
 {
-	std::cout << CYN << "Cat destructor called" << std::endl << RST;	
+	std::cout << "[Cat] Destructor Called" << std::endl;
+}
+
+void Cat::makeSound() const
+{
+	std::cout << getType() << " : Miaou" << std::endl;
 }

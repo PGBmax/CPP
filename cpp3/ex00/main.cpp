@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 03:00:33 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/04 13:48:00 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/17 15:47:33 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,69 @@
 
 int	main()
 {
-	ClapTrap num("");
+	ClapTrap yogurt("Yogurt");
+	ClapTrap cpy( yogurt );
+	ClapTrap cpy2("");
 
-	num.attack("");
-	num.attack("Stromae");
-	num.attack("Stromae");
-	num.attack("Stromae");
-	num.attack("Stromae");
-	num.attack("Stromae");
-	num.attack("Stromae");
-	num.attack("Stromae");
-	num.attack("Stromae");
-	num.beRepaired(10);
-	num.beRepaired(-10);
-	num.attack("");
-	num.takeDamage(10);
-	num.takeDamage(-10);
-	num.takeDamage(10);
-	num.takeDamage(-10);
-	num.attack("Stromae");
-	num.beRepaired(10);
-	num.beRepaired(-10);
-	num.takeDamage(10);
-	num.takeDamage(1 -10);
+	cpy2 = cpy;
+
+	yogurt.attack("");
+	yogurt.attack("Stromae");
+	yogurt.attack("Stromae");
+	yogurt.attack("Stromae");
+	yogurt.attack("Stromae");
+	yogurt.attack("Stromae");
+	yogurt.attack("Stromae");
+	yogurt.attack("Stromae");
+	yogurt.attack("Stromae");
+	yogurt.beRepaired(10);
+	yogurt.beRepaired(-10);
+	yogurt.attack("");
+	yogurt.takeDamage(10);
+	yogurt.takeDamage(-10);
+	yogurt.takeDamage(10);
+	yogurt.takeDamage(-10);
+	yogurt.attack("Stromae");
+	yogurt.beRepaired(10);
+	yogurt.beRepaired(-10);
+	yogurt.takeDamage(10);
+	yogurt.takeDamage(1 -10);
+	cpy.attack("");
+	cpy.attack("Stromae");
+	cpy.attack("Stromae");
+	cpy.attack("Stromae");
+	cpy.attack("Stromae");
+	cpy.attack("Stromae");
+	cpy.attack("Stromae");
+	cpy.attack("Stromae");
+	cpy.attack("Stromae");
+	cpy.beRepaired(10);
+	cpy.beRepaired(-10);
+	cpy.attack("");
+	cpy.takeDamage(10);
+	cpy.takeDamage(-10);
+	cpy.takeDamage(10);
+	cpy.takeDamage(-10);
+	cpy.attack("Stromae");
+	cpy.beRepaired(10);
+	cpy.beRepaired(-10);
+	cpy.takeDamage(10);
+	cpy.takeDamage(1 -10);
+
+	cpy2.attack("");
+	cpy2.attack("Stromae");
+	cpy2.attack("Stromae");
+	cpy2.attack("Stromae");
+	cpy2.attack("Stromae");
+	cpy2.attack("Stromae");
+	cpy2.attack("Stromae");
+	cpy2.attack("Stromae");
+	cpy2.attack("Stromae");
+	cpy2.beRepaired(10);
+	cpy2.beRepaired(-10);
+	cpy2.attack("");
+	cpy2.attack("Stromae");
+	cpy2.beRepaired(10);
+	cpy2.beRepaired(-10);
+	cpy2.takeDamage(10);
 }

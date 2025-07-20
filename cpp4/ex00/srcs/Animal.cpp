@@ -5,54 +5,41 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/06 13:39:25 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/06 14:13:49 by pboucher         ###   ########.fr       */
+/*   Created: 2025/07/18 12:24:07 by pboucher          #+#    #+#             */
+/*   Updated: 2025/07/18 12:53:12 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal()
+Animal::Animal() : _type("Animal")
 {
-	std::cout << CYN << "Animal constructor called" << std::endl << RST;
-	setType( "None" );
+	std::cout << "[Animal] Constructor Called" << std::endl;
 }
 
-Animal::Animal( const Animal &copy )
+Animal::Animal( const Animal &copy ) : _type(copy._type)
 {
-	*this = copy;
-	std::cout << CYN << "Animal constructor copy called" << std::endl << RST;	
+	std::cout << "[Animal] Constructor Copy Called" << std::endl;
 }
 
-Animal	&Animal::operator=( const Animal &op )
+Animal	&Animal::operator=( const Animal &copy )
 {
-	this->type = op.type;
+	this->_type = copy._type;
+	std::cout << "[Animal] Constructor Copy Assignment Called" << std::endl;
 	return (*this);
 }
 
 Animal::~Animal()
 {
-	std::cout << CYN << "Animal destructor called" << std::endl << RST;	
+	std::cout << "[Animal] Destructor Called" << std::endl;
 }
 
-std::string	Animal::getType() const
+const std::string &Animal::getType() const
 {
-	return (this->type);
+	return (_type);
 }
 
-void		Animal::setType( std::string name )
+void Animal::makeSound() const
 {
-	this->type = name;
-}
-
-void		Animal::makeSound() const
-{
-	std::cout << RED;
-	if (getType() == "Dog")
-		std::cout << "Wouff" << std::endl;
-	else if (getType() == "Cat")
-		std::cout << "Miaou" << std::endl;
-	else
-		std::cout << "sybau" << std::endl;
-	std::cout << RST;
+	std::cout << getType() << " : *Animal Sound*" << std::endl;
 }

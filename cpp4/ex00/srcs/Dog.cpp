@@ -5,32 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/06 13:59:49 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/06 14:06:16 by pboucher         ###   ########.fr       */
+/*   Created: 2025/07/18 12:37:11 by pboucher          #+#    #+#             */
+/*   Updated: 2025/07/18 12:53:24 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Dog.hpp"
 
 Dog::Dog()
 {
-	std::cout << CYN << "Dog constructor called" << std::endl << RST;
-	setType( "Dog" );
+	_type = "Dog";
+	std::cout << "[Dog] Constructor Called" << std::endl;
 }
 
 Dog::Dog( const Dog &copy )
 {
-	*this = copy;
-	std::cout << CYN << "Dog constructor copy called" << std::endl << RST;	
+	_type = copy._type;
+	std::cout << "[Dog] Constructor Copy Called" << std::endl;
 }
 
-Dog	&Dog::operator=( const Dog &op )
+Dog	&Dog::operator=( const Dog &copy )
 {
-	this->type = op.type;
+	_type = copy._type;
+	std::cout << "[Dog] Constructor Copy Assignment Called" << std::endl;
 	return (*this);
 }
 
 Dog::~Dog()
 {
-	std::cout << CYN << "Dog destructor called" << std::endl << RST;	
+	std::cout << "[Dog] Destructor Called" << std::endl;
+}
+
+void Dog::makeSound() const
+{
+	std::cout << getType() << " : Wouf!" << std::endl;
 }

@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.hpp                                          :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/19 01:10:16 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/06 13:36:01 by pboucher         ###   ########.fr       */
+/*   Created: 2025/07/18 12:36:12 by pboucher          #+#    #+#             */
+/*   Updated: 2025/07/18 12:53:35 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_HPP
-# define UTILS_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-#include <iostream>
+#include "Animal.hpp"
 
-#define RST "\e[0m"
-#define RED "\e[1;31m"
-#define GRN "\e[1;32m"
-#define YEL "\e[1;33m"
-#define BLU "\e[1;34m"
-#define MAG "\e[1;35m"
-#define CYN "\e[1;36m"
-#define WHT "\e[1;37m"
+class Dog : public Animal
+{
+	public:
+		Dog();
+		Dog(const Dog &cpy );
+		Dog &operator=( const Dog &cpy );
+		virtual ~Dog();
+
+		virtual void makeSound() const;
+};
 
 #endif
