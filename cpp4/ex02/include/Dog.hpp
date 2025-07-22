@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 12:36:12 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/22 13:46:14 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/22 14:16:32 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 # define DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
-class Dog : public Animal
+class Dog : public AAnimal
 {
 	public:
 		Dog();
@@ -24,6 +25,9 @@ class Dog : public Animal
 		~Dog();
 
 		void makeSound() const;
+		Brain	*getBrainAddress() const;
+	private:
+		Brain	*_brain;
 };
 
 #endif

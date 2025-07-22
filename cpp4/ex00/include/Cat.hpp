@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 12:29:32 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/21 17:43:57 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/22 13:46:10 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Cat : public Animal
 		Cat &operator=( const Cat &cpy );
 		~Cat();
 
-		virtual void makeSound() const;
+		void makeSound() const;
 };
 
 #endif
