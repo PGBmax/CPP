@@ -1,4 +1,4 @@
-NAME = polymorphism
+NAME = ft_mmo
 
 INCLUDES = include/
 
@@ -7,12 +7,11 @@ CC = c++
 
 SRC_DIR		=	srcs/
 SRC_NAME	=	main.cpp \
-				AAnimal.cpp \
-				Cat.cpp \
-				Dog.cpp \
-				WrongAnimal.cpp \
-				WrongCat.cpp \
-				Brain.cpp
+				AMateria.cpp \
+				Character.cpp \
+				Cure.cpp \
+				Ice.cpp \
+				MateriaSource.cpp
 
 OBJ_DIR = obj/
 OBJ_NAME = $(SRC_NAME:.cpp=.o)
@@ -29,6 +28,10 @@ $(OBJ_DIR)%.o:$(SRC_DIR)%.cpp
 
 $(NAME): $(OBJ)
 		@c++ $(CPP_FLAGS) -o $(NAME) $(OBJ)
+		@echo "\033[1;32m Executable" $(NAME) "created"
+
+debug: $(OBJ)
+		@c++ $(CPP_FLAGS) -o $(NAME) $(OBJ) -D DEBUG=1
 		@echo "\033[1;32m Executable" $(NAME) "created"
 
 clean:

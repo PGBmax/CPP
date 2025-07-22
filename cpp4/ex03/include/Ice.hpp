@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/18 12:36:12 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/22 23:47:39 by pboucher         ###   ########.fr       */
+/*   Created: 2025/07/23 00:20:36 by pboucher          #+#    #+#             */
+/*   Updated: 2025/07/23 00:41:01 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef ICE_HPP
+#define ICE_HPP
 
-#include "AAnimal.hpp"
-#include "Brain.hpp"
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-class Dog : public AAnimal
+class Ice: public AMateria
 {
 	public:
-		Dog();
-		Dog(const Dog &cpy );
-		Dog &operator=( const Dog &cpy );
-		~Dog();
+		Ice();
+		Ice(const Ice &cpy);
+		Ice	&operator=(const Ice &cpy);
+		~Ice();
 
-		void makeSound() const;
-		Brain	*getBrainAddress() const;
-	private:
-		Brain	*_brain;
+		std::string const	&getType() const;
+		AMateria			*clone() const;
+		void				use(ICharacter& target);
 };
 
 #endif

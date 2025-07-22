@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/18 12:36:12 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/22 23:47:39 by pboucher         ###   ########.fr       */
+/*   Created: 2025/07/23 00:33:31 by pboucher          #+#    #+#             */
+/*   Updated: 2025/07/23 00:35:16 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
-#include "AAnimal.hpp"
-#include "Brain.hpp"
+#include "IMateriaSource.hpp"
 
-class Dog : public AAnimal
+class MateriaSource : public IMateriaSource
 {
 	public:
-		Dog();
-		Dog(const Dog &cpy );
-		Dog &operator=( const Dog &cpy );
-		~Dog();
+		MateriaSource();
+		MateriaSource(const MateriaSource &cpy);
+		MateriaSource	&operator=(const MateriaSource &cpy);
+		~MateriaSource();
 
-		void makeSound() const;
-		Brain	*getBrainAddress() const;
+		void learnMateria(AMateria *materia);
+		AMateria* createMateria(std::string const & type);
+
 	private:
-		Brain	*_brain;
+		AMateria	*_templates[4];
+		AMateria	**_storage;
+		int			_storageLen;
 };
 
 #endif
