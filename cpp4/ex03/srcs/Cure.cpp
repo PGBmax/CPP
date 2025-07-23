@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 00:24:03 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/23 12:27:13 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/23 14:13:54 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,28 @@ Cure::Cure()
 {
 	_type = "cure";
 	if (DEBUG)
-		std::cout << "Cure Constructor Called" << std::endl;
+		std::cout << BLU << "Cure Constructor Called" << std::endl;
 }
 
 Cure::Cure(const Cure &cpy)
 {
 	*this = cpy;
 	if (DEBUG)
-		std::cout << "Cure Constructor Copy Called" << std::endl;
+		std::cout << BLU << "Cure Constructor Copy Called" << std::endl;
 }
 
 Cure	&Cure::operator=(const Cure &cpy)
 {
 	_type = cpy.getType();
 	if (DEBUG)
-		std::cout << "Cure Constructor Copy Assignment Called" << std::endl;
+		std::cout << BLU << "Cure Constructor Copy Assignment Called" << std::endl;
 	return (*this);
 }
 
 Cure::~Cure()
 {
 	if (DEBUG)
-		std::cout << "Cure Destructor Called" << std::endl;
+		std::cout << BLU << "Cure Destructor Called" << std::endl;
 }
 
 std::string const	&Cure::getType() const
@@ -53,5 +53,5 @@ AMateria	*Cure::clone() const
 
 void	Cure::use(ICharacter &target)
 {
-	std::cout << "heals " << target.getName() << "'s wounds *" << std::endl;
+	std::cout << "heals " << target.getName() << "'s wounds *" << RST << std::endl;
 }

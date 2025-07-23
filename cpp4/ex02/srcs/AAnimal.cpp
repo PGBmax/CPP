@@ -15,28 +15,28 @@
 AAnimal::AAnimal() : _type("AAnimal")
 {
 	if (DEBUG)
-		std::cout << "[AAnimal]	Constructor Called" << std::endl;
+		std::cout << BLU << "[AAnimal]	Constructor Called" << RST << std::endl;
 }
 
 AAnimal::AAnimal( const AAnimal &copy )
 {
 	*this = copy;
 	if (DEBUG)
-		std::cout << "[AAnimal]	Constructor Copy Called" << std::endl;
+		std::cout << BLU << "[AAnimal]	Constructor Copy Called" << RST << std::endl;
 }
 
 AAnimal	&AAnimal::operator=( const AAnimal &copy )
 {
 	this->_type = copy._type;
 	if (DEBUG)
-		std::cout << "[AAnimal]	Constructor Copy Assignment Called" << std::endl;
+		std::cout << BLU << "[AAnimal]	Constructor Copy Assignment Called" << RST << std::endl;
 	return (*this);
 }
 
 AAnimal::~AAnimal()
 {
 	if (DEBUG)
-		std::cout << "[AAnimal]	Destructor Called" << std::endl;
+		std::cout << BLU << "[AAnimal]	Destructor Called" << RST << std::endl;
 }
 
 const std::string &AAnimal::getType() const
@@ -46,5 +46,5 @@ const std::string &AAnimal::getType() const
 
 void AAnimal::makeSound() const
 {
-	std::cout << getType() << " : *AAnimal Sound*" << std::endl;
+	std::cout << CYN << getType() << " : *AAnimal Sound*" << RST << std::endl;
 }

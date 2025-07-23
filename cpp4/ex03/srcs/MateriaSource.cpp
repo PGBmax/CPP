@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 00:35:37 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/23 12:27:13 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/23 14:15:40 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ MateriaSource::MateriaSource()
 	_storageLen = 0;
 	_storage = new AMateria*[_storageLen];
 	if (DEBUG)
-		std::cout << "MateriaSource Constructor Called" << std::endl;
+		std::cout << BLU << "MateriaSource Constructor Called" << std::endl;
 }
 
 MateriaSource::MateriaSource(const MateriaSource &cpy)
 {
 	*this = cpy;
 	if (DEBUG)
-		std::cout << "MateriaSource Constructor Copy Called" << std::endl;
+		std::cout << BLU << "MateriaSource Constructor Copy Called" << std::endl;
 }
 
 MateriaSource	&MateriaSource::operator=(const MateriaSource &cpy)
@@ -47,7 +47,7 @@ MateriaSource	&MateriaSource::operator=(const MateriaSource &cpy)
 		_templates[i] = _storage[i];
 	}
 	if (DEBUG)
-		std::cout << "MateriaSource Constructor Copy Assignment Called" << std::endl;
+		std::cout << BLU << "MateriaSource Constructor Copy Assignment Called" << std::endl;
 	return (*this);
 }
 
@@ -58,7 +58,7 @@ MateriaSource::~MateriaSource()
 			delete _storage[i];
 	delete [] _storage;
 	if (DEBUG)
-		std::cout << "MateriaSource Destructor Called" << std::endl;
+		std::cout << BLU << "MateriaSource Destructor Called" << std::endl;
 }
 
 void MateriaSource::learnMateria(AMateria *materia)
@@ -67,7 +67,7 @@ void MateriaSource::learnMateria(AMateria *materia)
 	for (i = 0; i < 4 && _templates[i]; ++i)
 		;
 	if (!materia)
-		std::cout << "Cannot Work with NULL AMateria" << std::endl;
+		std::cout << RED << "Cannot Work with NULL AMateria" << RST << std::endl;
 	else
 	{
 		AMateria	**temp = new AMateria*[_storageLen + 1];
@@ -77,7 +77,7 @@ void MateriaSource::learnMateria(AMateria *materia)
 		temp[_storageLen] = materia;
 		_storage = temp;
 		if (i == 4)
-			std::cout << "There is already 4 templates" << std::endl;
+			std::cout << RED << "There is already 4 templates" << RST << std::endl;
 		else
 			_templates[i] = temp[_storageLen];
 		_storageLen ++;
@@ -89,6 +89,6 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 	for (int i = 0; i < 4 && _templates[i]; ++i)
 		if (_templates[i]->getType() == type)
 			return (_templates[i]->clone());
-	std::cout << "Nah bro what da hell" << std::endl;
+	std::cout << RED << "Nah bro what da hell type: " << type << " is not valid!" << RST << std::endl;
 	return 0;
 }
