@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 00:12:56 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/23 00:48:39 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/23 12:35:30 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,9 @@ void	Character::equip(AMateria* m)
 		else
 		{
 			_inventory[_invIndex] = temp[_storageLen];
-			_invIndex ++;
+			_invIndex++;
 		}
-		_storageLen ++;
+		_storageLen++;
 	}
 }
 
@@ -101,7 +101,7 @@ void	Character::unequip(int idx)
 		for (int i = idx; i < 3; ++i)
 			_inventory[i] = _inventory[i + 1];
 		_inventory[3] = NULL;
-		_invIndex --;
+		_invIndex--;
 	}
 }
 
@@ -113,8 +113,7 @@ void	Character::use(int idx, ICharacter& target)
 		std::cout << "Invalid Index" << std::endl;
 	else
 	{
-		std::cout << getName() << " ";
+		std::cout << "* ";
 		_inventory[idx]->use(target);
-		std::cout << std::endl;
 	}
 }

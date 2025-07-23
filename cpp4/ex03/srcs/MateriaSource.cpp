@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 00:35:37 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/23 00:49:19 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/23 12:27:13 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ MateriaSource::MateriaSource(const MateriaSource &cpy)
 		std::cout << "MateriaSource Constructor Copy Called" << std::endl;
 }
 
-MateriaSource	&MateriaSource::operator =(const MateriaSource &cpy)
+MateriaSource	&MateriaSource::operator=(const MateriaSource &cpy)
 {
 	for (int i = 0; i < _storageLen; ++i)
 		if (_storage[i])

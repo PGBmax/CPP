@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 12:37:11 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/22 13:53:38 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/23 12:11:53 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,32 @@
 Dog::Dog()
 {
 	_type = "Dog";
-	std::cout << "[Dog] Constructor Called" << std::endl;
+	if (DEBUG)
+		std::cout << "[Dog]		Constructor Called" << std::endl;
 }
 
 Dog::Dog( const Dog &copy )
 {
 	*this = copy;
-	std::cout << "[Dog] Constructor Copy Called" << std::endl;
+	if (DEBUG)
+		std::cout << "[Dog]		Constructor Copy Called" << std::endl;
 }
 
 Dog	&Dog::operator=( const Dog &copy )
 {
 	_type = copy._type;
-	std::cout << "[Dog] Constructor Copy Assignment Called" << std::endl;
+	if (DEBUG)
+		std::cout << "[Dog]		Constructor Copy Assignment Called" << std::endl;
 	return (*this);
 }
 
 Dog::~Dog()
 {
-	std::cout << "[Dog] Destructor Called" << std::endl;
+	if (DEBUG)
+		std::cout << "[Dog]		Destructor Called" << std::endl;
 }
 
 void Dog::makeSound() const
 {
-	std::cout << getType() << " : Wouf!" << std::endl;
+	std::cout << getType() << "	: Wouf!" << std::endl;
 }

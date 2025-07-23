@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 12:20:57 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/21 17:44:23 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/23 12:17:45 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 # define ANIMAL_HPP
 
 #include <iostream>
+
+#ifndef DEBUG
+# define DEBUG 1
+#endif
 
 class Animal
 {

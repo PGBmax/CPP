@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 12:37:36 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/22 15:30:14 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/23 11:21:48 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int main()
 		delete []animals;
 	}
 	{
+		//AAnimal test;
 		Cat	cat;
 		{
 			Cat catcpy = cat;

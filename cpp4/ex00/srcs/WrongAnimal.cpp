@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 12:24:07 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/22 13:53:45 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/23 12:12:54 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,29 @@
 
 WrongAnimal::WrongAnimal() : _type("WrongAnimal")
 {
-	std::cout << "[WrongAnimal] Constructor Called" << std::endl;
+	if (DEBUG)
+		std::cout << "[WrongAnimal]	Constructor Called" << std::endl;
 }
 
 WrongAnimal::WrongAnimal( const WrongAnimal &copy )
 {
 	*this = copy;
-	std::cout << "[WrongAnimal] Constructor Copy Called" << std::endl;
+	if (DEBUG)
+		std::cout << "[WrongAnimal]	Constructor Copy Called" << std::endl;
 }
 
 WrongAnimal	&WrongAnimal::operator=( const WrongAnimal &copy )
 {
 	this->_type = copy._type;
-	std::cout << "[WrongAnimal] Constructor Copy Assignment Called" << std::endl;
+	if (DEBUG)
+		std::cout << "[WrongAnimal]	Constructor Copy Assignment Called" << std::endl;
 	return (*this);
 }
 
 WrongAnimal::~WrongAnimal()
 {
-	std::cout << "[WrongAnimal] Destructor Called" << std::endl;
+	if (DEBUG)
+		std::cout << "[WrongAnimal]	Destructor Called" << std::endl;
 }
 
 const std::string &WrongAnimal::getType() const

@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 13:50:50 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/22 13:52:35 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/23 12:16:09 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define BRAIN_HPP
 
 #include <iostream>
+#include "Animal.hpp"
 
 class Brain
 {

@@ -30,10 +30,6 @@ $(NAME): $(OBJ)
 		@c++ $(CPP_FLAGS) -o $(NAME) $(OBJ)
 		@echo "\033[1;32m Executable" $(NAME) "created"
 
-debug: $(OBJ)
-		@c++ $(CPP_FLAGS) -o $(NAME) $(OBJ) -D DEBUG=1
-		@echo "\033[1;32m Executable" $(NAME) "created"
-
 clean:
 		@rm -rf $(OBJ_DIR)
 		@echo "\033[1;31m Deleted all object files"
