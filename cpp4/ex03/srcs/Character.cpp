@@ -6,7 +6,7 @@
 /*   By: pboucher <pboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 00:12:56 by pboucher          #+#    #+#             */
-/*   Updated: 2025/07/23 14:16:33 by pboucher         ###   ########.fr       */
+/*   Updated: 2025/07/24 12:54:35 by pboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 Character::Character(const std::string &name)
 {
 	_name = name;
+	if (name.empty())
+		_name = "John Doe";
 	for (int i = 0; i < 4; ++i)
 		_inventory[i] = NULL;
 	_invIndex = 0;
